@@ -27,6 +27,10 @@ public class Valvula{
   		return 0.00;
   	}
   }
+  
+   public Boolean getestado(){
+  	return estado;
+  }
 
 }
 
