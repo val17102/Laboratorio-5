@@ -21,7 +21,7 @@ public class Valvula{
   }
 
   public double calcularSalida(){
-  	
+  	return (mAsignado.gethabitantes()*0.137);
   }
 
 }
