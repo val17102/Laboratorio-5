@@ -24,7 +24,7 @@ public class Tanque{
   }
 
   public double calcularcActual(){
-  		x = cTotal;
+  		double x = cTotal;
   	for(int i = 0; i<=10; i++){
   		x = x - valvulas[i].calcularSalida();
   	}
