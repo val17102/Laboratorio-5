@@ -14,20 +14,24 @@ public class Tanque{
 
   public void abrirValvula(int i){
   	valvulas[i].abrirValvula();
-  	calcularcActual();
+  	cActual = calcularcActual();
 
   }
 
   public void cerrarValvula(int i){
   	valvulas[i].cerrarValvula();
-  	calcularcActual();
+  	cActual = calcularcActual();
   }
 
-  public void calcularcActual(){
-  		cActual = cTotal;
+  public double calcularcActual(){
+  		x = cTotal;
   	for(int i = 0; i<=10; i++){
-  		cActual = cActual - valvulas[i].calcularSalida();
+  		x = x - valvulas[i].calcularSalida();
   	}
+  	return x;
   }
 
+  public int vertiendo(){
+    
+  }
 }
