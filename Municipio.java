@@ -7,5 +7,8 @@ public class Municipio{
   	nombre = nom;
   	habitantes = hab;
   }
-
+  
+  public int gethabitantes(){
+  	return habitantes;
+  }
 }
