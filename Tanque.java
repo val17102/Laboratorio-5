@@ -39,4 +39,5 @@ public class Tanque{
   		}
      }
   }
+  return x;
 }
