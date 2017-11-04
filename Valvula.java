@@ -22,15 +22,14 @@ public class Valvula{
 
   public double calcularSalida(){
   	if (estado){
-  	return mAsignado.gethabitantes()*0.137);
+  	return mAsignado.gethabitantes()*0.137;
   	}else{
   		return 0.00;
   	}
   }
-  
-   public Boolean getestado(){
+
+  public Boolean getestado(){
   	return estado;
   }
-
 }
 

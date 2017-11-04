@@ -32,12 +32,12 @@ public class Tanque{
   }
 
   public int vertiendo(){
-    int x = 0;
+  	int x = 0;
   	for(int i = 0; i<10; i++){
   		if(valvulas[i].getestado()){
   			x++;
   		}
      }
+     return x;
   }
-  return x;
 }
