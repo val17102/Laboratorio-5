@@ -1,10 +1,10 @@
 public class Cilindro extends Tanque{
 
-	private int radio;
+	private double radio;
 
 	public Cilindro(){
 		super();
-		radio = 10;
+		radio = 10.00;
 		tipo = "Cilindro";
 	}
 
