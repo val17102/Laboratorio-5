@@ -1,15 +1,17 @@
 public class Tanque{
   
-  protected String IDNum;
+  protected String idNum;
   protected String tipo;
   protected double cTotal; 
   protected double cActual;
   protected double altura;
   protected Valvula[] valvulas;
 
-  public Tanque(){
+  public Tanque(Valvula[] valve, String type){
   	altura = 30.0;
   	valvulas = new Valvula[10];
+  	valvulas = valve;
+  	tipo = type;
   }
 
   public void abrirValvula(int i){
@@ -39,5 +41,9 @@ public class Tanque{
   		}
      }
      return x;
+  }
+
+  public void setID(String id){
+  	idNum = id;
   }
 }

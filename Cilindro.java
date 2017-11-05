@@ -2,8 +2,8 @@ public class Cilindro extends Tanque{
 
 	private double radio;
 
-	public Cilindro(){
-		super();
+	public Cilindro(Valvula[] valve, String type){
+		super(valve, type);
 		radio = 10.00;
 		tipo = "Cilindro";
 	}
