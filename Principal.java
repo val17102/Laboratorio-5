@@ -25,13 +25,35 @@ public class Principal{
 		tanques[pos] = new Cilindro(valve, "Cilindro");
 	}else if(tipo == 1){
 		tanques[pos] = new Ortogonal(valve, "Ortogonal");
-	}else if(tipo== 2){
+	}else if(tipo == 2){
 		tanques[pos] = new Cubico(valve, "Cubo");
 	}
 
 	}
 
 	public String mostrarTanques(){
-		return "";
+		String s = "";
+		for (int i = 0; i<10; i++){
+			s = s+""+tanques[i].getID()+" "+tanques[i].gettipo()+"/n";
+		}
+		return s;
+	}
+
+	public int cantidadTanquesC(){
+		int cant = 0;
+		for(int i = 0; i<10; i++){
+			if (tanques[i] instanceof Cilindro){
+				cant = cant + tanques[i].vertiendo();
+			}
+		}
+		return cant;
+	}
+
+	public double cantidadAgua(){
+		double total = 0.0;
+		for (int i = 0; i<10; i++){
+			total = total + tanques[i].getcActual();
+		}
+		return total;
 	}
 }

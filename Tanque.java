@@ -46,4 +46,16 @@ public class Tanque{
   public void setID(String id){
   	idNum = id;
   }
+
+  public String getID(){
+  	return idNum;
+  }
+
+  public String gettipo(){
+  	return tipo;
+  }
+
+  public double getcActual(){
+  	return cActual;
+  }
 }
