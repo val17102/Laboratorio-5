@@ -1,33 +1,46 @@
+/**
+*@autor: Héctor Miguel Valle Quinto
+*@date: 06/11/2017
+*@proposito: Clase quue representa una valvula que tiene cualquier tanque
+*/
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Miguel
+ */
 public class Valvula{ 
-
+/**
+ * estado de la valvula
+ */
   private Boolean estado;
+  /**
+   * lista de fechas
+   */
   private ArrayList<String> rFechas;
-  private Municipio mAsignado; 
 
-  public Valvula(Municipio m){
+/**
+ * Constructor
+ */
+  public Valvula(){
   	estado = false;
-  	mAsignado = m;
   	rFechas = new ArrayList<String>();
   }
-
+/**
+ * Metodo que se encarga de abrir una valvula
+ */
   public void abrirValvula(){
   	estado = true;
   }
-
+/**
+ * Metodo que se encarga de cerrar una valvula
+ */
   public void cerrarValvula(){
   	estado = false;
   }
-
-  public double calcularSalida(){
-  	if (estado){
-  	return mAsignado.gethabitantes()*0.137;
-  	}else{
-  		return 0.00;
-  	}
-  }
-
+/**
+ * Obtiene el estado de la valvula
+ * @return  estado de la valvula
+ */
   public Boolean getestado(){
   	return estado;
   }
