@@ -8,7 +8,11 @@
 *@date: 06/11/2017
 *@proposito: Clase GUI
 */
-import javax.swing.JOptionPane;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 /**
  *
  * @author Miguel
@@ -19,9 +23,20 @@ public class GUILab extends javax.swing.JFrame {
      * Creates new form GUILab
      */
     private Principal Robco;
+    
     public GUILab() {
         initComponents();
         Robco = new Principal();
+        int x,y,z;
+        String CurrentLine;
+        for(int i = 1; i<11; i++){
+        try(BufferedReader br = new BufferedReader(new FileReader("Tanque"+i+".txt"))){
+            CurrentLine = br.readLine();
+            x = Integer.parseInt(CurrentLine);
+            CurrentLine = br.readLine();
+            y = Integer.parseInt(CurrentLine);
+            Robco.agregarTanque(x,i-1,Robco.getmunicipios(y));
+        }catch(IOException e){
         Robco.agregarTanque(0, 0, Robco.getmunicipios(0));
         Robco.agregarTanque(1, 1, Robco.getmunicipios(2));
         Robco.agregarTanque(2, 2, Robco.getmunicipios(4));
@@ -31,7 +46,10 @@ public class GUILab extends javax.swing.JFrame {
         Robco.agregarTanque(2, 6, Robco.getmunicipios(1));
         Robco.agregarTanque(1, 7, Robco.getmunicipios(1));
         Robco.agregarTanque(0, 8, Robco.getmunicipios(2));
-        Robco.agregarTanque(0, 9, Robco.getmunicipios(4));
+        Robco.agregarTanque(0, 9, Robco.getmunicipios(4)); 
+        }
+        }
+        
         combo1();
         combo2();
         combo3();
@@ -374,13 +392,40 @@ public class GUILab extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        Robco.agregarTanque(1, 3, Robco.getmunicipios(0));
+       
         if(jRadioButton1.isSelected()){
             Robco.agregarTanque(0,jComboBox4.getSelectedIndex(),Robco.getmunicipios(jComboBox3.getSelectedIndex()));
+             try{File file = new File("Tanque"+(jComboBox4.getSelectedIndex()+1)+".txt");
+             file.createNewFile();
+             FileWriter writer = new FileWriter(file);
+             writer.write("0\n"+jComboBox3.getSelectedIndex()+"\n");
+             writer.flush();
+             writer.close();
+                } catch(Exception e){
+                    
+                }
         } else if(jRadioButton2.isSelected()){
             Robco.agregarTanque(1,jComboBox4.getSelectedIndex(),Robco.getmunicipios(jComboBox3.getSelectedIndex()));
+             try{File file = new File("Tanque"+(jComboBox4.getSelectedIndex()+1)+".txt");
+             file.createNewFile();
+             FileWriter writer = new FileWriter(file);
+             writer.write("1\n"+jComboBox3.getSelectedIndex()+"\n");
+             writer.flush();
+             writer.close();
+                } catch(Exception e){
+                    
+                }
         } else if(jRadioButton3.isSelected()){
             Robco.agregarTanque(2,jComboBox4.getSelectedIndex(),Robco.getmunicipios(jComboBox3.getSelectedIndex()));
+             try{File file = new File("Tanque"+(jComboBox4.getSelectedIndex()+1)+".txt");
+             file.createNewFile();
+             FileWriter writer = new FileWriter(file);
+             writer.write("2\n"+jComboBox3.getSelectedIndex()+"\n");
+             writer.flush();
+             writer.close();
+                } catch(Exception e){
+                    
+                }
         }
         combo1();
         combo2();
